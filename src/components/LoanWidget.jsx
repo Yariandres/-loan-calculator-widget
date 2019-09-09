@@ -54,23 +54,23 @@ class LoanWidget extends React.Component {
 
     // Returns: {"amount":"10000.00","duration":"5","monthlyInstallment":"5390.61"
 
-    try{
+    try {
       var loanDetails = {
-      duration: numYear,
-      amount: LoanAmount,
-      monthlyInstallment: "5390.61"      
-    }
-    return loanDetails;
+        duration: numYear,
+        amount: LoanAmount,
+        monthlyInstallment: "5390.61"
+      }
+      return loanDetails;
     } catch {
       console.log("Notification for the user")
-    }    
+    }
   }
 
   resetForm = () => {
     let fields = {};
-      fields["amount"] = "";
-      fields["years"] = "";
-      this.setState({ fields: fields });
+    fields["amount"] = "";
+    fields["years"] = "";
+    this.setState({ fields: fields });
   }
 
   // form validation
@@ -91,7 +91,7 @@ class LoanWidget extends React.Component {
       errors["amount"] = <Alert color="danger">*Please enter a value between 1K to 100K</Alert>;
     }
 
-     // if the there is no input
+    // if the there is no input
     if (!fields["years"]) {
       formIsValid = false;
       errors["years"] = <Alert color="warning">*Please enter the duration for the loan</Alert>;
